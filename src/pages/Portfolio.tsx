@@ -35,6 +35,8 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { type SxProps, type Theme } from "@mui/material";
 
+import resumePDF from "/src/assets/resume/athavan-resume.pdf";
+
 interface GradientBlobProps {
     top?: string | number;
     left?: string | number;
@@ -597,7 +599,7 @@ export default function Portfolio() {
                                 size="large"
                                 type="submit"
                                 variant="contained"
-                                href="src\assets\resume\athavan-resume.pdf"
+                                href={resumePDF}
                                 target="_blank" download
                                 startIcon={<ArrowDownwardIcon />}
                                 sx={{
@@ -613,7 +615,7 @@ export default function Portfolio() {
                             <Button
                                 size="large"
                                 variant="outlined"
-                                href="src\assets\resume\athavan-resume.pdf"
+                                 href={resumePDF}
                                 target="_blank"
                                 startIcon={<Preview />}
                                 sx={{
