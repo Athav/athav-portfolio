@@ -357,7 +357,7 @@ export default function Portfolio() {
                         <Stack direction="row" spacing={2} justifyContent={'center'}>
                             <Avatar
                                 alt="Athav"
-                                src="src\assets\athav.png"
+                                src="src/assets/athav.png"
                                 sx={{ width: 200, height: 200 }}
                             />
                         </Stack>
