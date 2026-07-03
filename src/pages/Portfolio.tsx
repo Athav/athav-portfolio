@@ -15,7 +15,6 @@ import {
     List,
     ListItemButton,
     ListItemText,
-    Grid,
     ThemeProvider,
     createTheme,
     CssBaseline,
@@ -23,6 +22,7 @@ import {
     Grow,
     useScrollTrigger,
 } from "@mui/material";
+import Grid from '@mui/material/Grid';
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
@@ -33,6 +33,27 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Preview from "@mui/icons-material/RemoveRedEye";
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+import { type SxProps, type Theme } from "@mui/material";
+
+interface GradientBlobProps {
+    top?: string | number;
+    left?: string | number;
+    right?: string | number;
+    bottom?: string | number;
+    color: string;
+    delay?: number;
+}
+
+interface RevealProps {
+    children: React.ReactNode;
+    delay?: number;
+    [key: string]: any;
+}
+
+interface SpotlightCardProps {
+    children: React.ReactNode;
+    sx?: SxProps<Theme>;
+}
 
 const CONTENT = {
     name: "Athavan P",
@@ -94,7 +115,7 @@ const theme = createTheme({
 });
 
 // Reveals children with a fade+slide once scrolled into view
-function Reveal({ children, delay = 0, ...props }) {
+function Reveal({ children, delay = 0, ...props }: RevealProps) {
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
 
@@ -125,9 +146,9 @@ function Reveal({ children, delay = 0, ...props }) {
     );
 }
 
-function SpotlightCard({ children, sx = {} }) {
-    const ref = useRef(null);
-    const handleMove = (e) => {
+function SpotlightCard({ children, sx = {} }: SpotlightCardProps) {
+    const ref = useRef<HTMLDivElement>(null);
+    const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
         const el = ref.current;
         if (!el) return;
         const rect = el.getBoundingClientRect();
@@ -178,7 +199,7 @@ function SpotlightCard({ children, sx = {} }) {
     );
 }
 
-const GradientBlob = ({ top, left, right, bottom, color, delay = 0 }) => (
+const GradientBlob = ({ top, left, right, bottom, color, delay = 0 }: GradientBlobProps) => (
     <Box
         sx={{
             position: "absolute",
@@ -219,7 +240,7 @@ export default function Portfolio() {
         return () => observer.disconnect();
     }, []);
 
-    const scrollTo = (id) => {
+    const scrollTo = (id: any) => {
         setDrawerOpen(false);
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     };
@@ -479,7 +500,7 @@ export default function Portfolio() {
                 </Reveal>
                 <Grid container spacing={3}>
                     {CONTENT.projects.map((p, i) => (
-                        <Grid item xs={12} md={6} key={i}>
+                        <Grid sx={{ width: { xs: '100%', md: '50%' } }} key={i}>
                             <Reveal delay={i * 100}>
                                 <Box
                                     component="a"
