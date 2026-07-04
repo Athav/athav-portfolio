@@ -36,7 +36,7 @@ import Stack from '@mui/material/Stack';
 import { type SxProps, type Theme } from "@mui/material";
 
 import resumePDF from "/src/assets/resume/athavan-resume.pdf";
-import profImg from "/favicon.png";
+import profImg from "/src/assets/resume/athav.png";
 
 interface GradientBlobProps {
     top?: string | number;
