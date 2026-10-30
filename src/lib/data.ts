@@ -1,91 +1,109 @@
-import FolderIcon from '@mui/icons-material/Folder';
+import {
+    SiAngular, SiBitbucket, SiCss, SiExpress, SiFigma, SiGit, SiHtml5, SiJavascript, SiJsonwebtokens, SiLaravel,
+    SiMongodb, SiMysql, SiNodedotjs, SiNpm, SiReact, SiSass, SiTypescript, SiVuedotjs, SiWordpress,
+} from "react-icons/si";
+import type { EducationItem, ExperienceItem, NavItem, ProjectItem, SkillSet } from "./interfaces";
+
+const experience: ExperienceItem[] = [
+    {
+        date: "Oct 2020 — Aug 2025 · 4 yrs 10 mos", company: "Sumanas Technology, Madurai", title: "Web Developer",
+        body: "React, Angular, Vue and React Native work for client products: a multi-tenant hospital system, a workforce portal, NYU's seating platform and a balloon booking site.",
+    },
+    {
+        date: "May 2019 — Sep 2020 · 1 yr 4 mos", company: "Wondersoft Pvt Ltd (client company)", title: "Angular Developer",
+        body: "Migrated the eShopaid retail POS frontend from Knockout.js to Angular 8 and built reusable, configuration-driven components.",
+    },
+    {
+        date: "May 2018 — May 2019 · 1 yr", company: "ValueMatters Org Consulting", title: "Full Stack Developer",
+        body: "Built a MEAN-stack patient monitoring proof of concept with role-based dashboards, appointment booking and medical history tracking.",
+    },
+];
+
+const projects: ProjectItem[] = [
+    { tag: "Sumanas Technology", title: "Hospital & Patient Management System", body: "Multi-tenant hospital system covering IP, OP, Pharmacy, Lab, Pathology and Radiology, with role-based access across hospital branches.", tech: ["Angular 7", "TypeScript", "HTML5", "SCSS", "RxJS", "REST APIs", "Git"] },
+    { tag: "Sumanas Technology", title: "Work Force Management", body: "Employee and management dashboards for attendance, performance tracking and scrum-style task ticketing with real-time status updates.", tech: ["Angular 7", "TypeScript", "HTML5", "SCSS", "Git"] },
+    { tag: "Sumanas Technology", title: "NYU Seating Management System", body: "Seat layout designer, student allocation and printable seat labels for NYU Law School classrooms and exam halls.", tech: ["Vue.js", "Laravel", "MySQL", "SCSS", "Vuex", "REST APIs", "Git"] },
+    { tag: "Sumanas Technology", title: "Rainbow Ryders Balloon Booking", body: "Hot air balloon booking platform: a Vue and Laravel admin site for balloons, pricing, coupons and payments, plus a React user site with calendar booking.", tech: ["Vue.js", "React.js", "Laravel", "MySQL", "WordPress", "SCSS", "Vuex", "REST APIs"] },
+    { tag: "Wondersoft Pvt Ltd", title: "eShopaid Retail POS (Angular Migration)", body: "Migrated a cloud-based retail POS frontend from Knockout.js to Angular 8: register management, stock adjustment, discounts, billing and receipts.", tech: ["Angular 8", "Knockout.js", "Java APIs"] },
+    { tag: "ValueMatters Org Consulting", title: "Patient Monitoring Application (MEAN)", body: "Proof-of-concept hospital app with role-based dashboards for admins, doctors, patients, receptionists and therapists, plus appointment booking and doctor assignment.", tech: ["Angular 6", "TypeScript", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Bitbucket"] },
+];
+
+const education: EducationItem[] = [
+    { title: "Master of Computer Application (MCA)", school: "College of Engineering, Guindy (CEG), Chennai", date: "2015 — 2018", grade: "CGPA 6.05" },
+    { title: "Bachelor of Information Technology (B.Sc IT)", school: "GTN Arts and Science College, Dindigul", date: "2012 — 2015", grade: "CGPA 7.07" },
+    { title: "Higher Secondary Certificate (HSC)", school: "C.S.M.A Higher Secondary School, Dindigul", date: "2011 — 2012", grade: "61.83%" },
+    { title: "Secondary School Leaving Certificate (SSLC)", school: "C.S.M.A Higher Secondary School, Dindigul", date: "2009 — 2010", grade: "67.80%" },
+];
+
+const skillSets: SkillSet[] = [
+    {
+        name: "Frontend Development", items: [
+            { name: "React.js", Icon: SiReact, color: "#61DAFB" },
+            { name: "Angular", Icon: SiAngular, color: "#DD0031" },
+            { name: "Vue.js", Icon: SiVuedotjs, color: "#4FC08D" },
+            { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+            { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
+            { name: "HTML5", Icon: SiHtml5, color: "#E34F26" },
+            { name: "CSS3", Icon: SiCss, color: "#1572B6" },
+            { name: "SCSS", Icon: SiSass, color: "#CC6699" },
+        ],
+    },
+    {
+        name: "Backend Development", items: [
+            { name: "Node.js", Icon: SiNodedotjs, color: "#5FA04E" },
+            { name: "Express.js", Icon: SiExpress, color: "var(--tx)" },
+            { name: "Laravel", Icon: SiLaravel, color: "#FF2D20" },
+            { name: "WordPress", Icon: SiWordpress, color: "#21759B" },
+        ],
+    },
+    { name: "Mobile Development", items: [{ name: "React Native", Icon: SiReact, color: "#61DAFB" }] },
+    {
+        name: "Database", items: [
+            { name: "MySQL", Icon: SiMysql, color: "#4479A1" },
+            { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+        ],
+    },
+    {
+        name: "Tools & Practices", items: [
+            { name: "Git", Icon: SiGit, color: "#F05032" },
+            { name: "Bitbucket", Icon: SiBitbucket, color: "#2684FF" },
+            { name: "npm", Icon: SiNpm, color: "#CB3837" },
+            { name: "JWT", Icon: SiJsonwebtokens, color: "#FB015B" },
+            { name: "UI/UX Design", Icon: SiFigma, color: "#F24E1E" },
+        ],
+    },
+];
 
 const CONTENT = {
     name: "Athavan P",
     role: "Web Developer",
+    roles: ["Web Developer", "React.js Engineer", "Angular Developer", "Vue.js Developer"],
     statement:
-        "I build interfaces that feel considered — the kind that get out of the way and just work. Over the past five years, I've moved between design and code, building everyday tools that people open without thinking twice. That's the goal: software that feels simple, even when there's a lot going on underneath.",
+        "I build interfaces that feel considered — the kind that get out of the way and just work. Over the past six years, I've moved between design and code, building everyday tools that people open without thinking twice. That's the goal: software that feels simple, even when there's a lot going on underneath.",
     about:
-        `Web Developer with 5+ years of experience in building scalable and responsive web applications using
+        `Web Developer with 6+ years of experience in building scalable and responsive web applications using
         React.js, Angular (6+), and Vue.js. Experienced in delivering client projects across multiple domains with
         working knowledge of Node.js, MongoDB, and RESTful API integration. Strong in UI development,
         performance optimization, and agile methodologies.`,
-    experience: [
-        { date: "2023 — Present", company: "Northline", title: "Senior Product Designer", body: "Own end-to-end design for the core workflow product. Rebuilt the design system, cut onboarding time by 38%." },
-        { date: "2020 — 2023", company: "Fieldwork Co.", title: "Product Designer", body: "First design hire. Designed and helped build the initial web app from a blank canvas to 12,000 weekly users." },
-        { date: "2017 — 2020", company: "Studio Halvor", title: "Visual Designer", body: "Editorial and identity work for cultural clients. Learned typography the slow way — by hand-setting a lot of type." },
-    ],
-    projects: [
-        { tag: "Case study", title: "Rebuilding the Northline design system", body: "A token-based system unifying six products, built in Figma and shipped as a React library.", href: "#" },
-        { tag: "Side project", title: "Ledger — a plain-text budgeting tool", body: "A local-first budgeting app for people who think in spreadsheets. Built solo with SQLite.", href: "#" },
-        { tag: "Case study", title: "Onboarding redesign, Fieldwork", body: "Reduced time-to-first-value from 9 minutes to under 2 by rethinking the first-run experience.", href: "#" },
-        { tag: "Experiment", title: "Type-scale playground", body: "A small tool for testing modular type scales live in the browser, used internally by three teams.", href: "#" },
-    ],
-    skills: [
-        { name: "Product Design", level: 95 },
-        { name: "React / TypeScript", level: 88 },
-        { name: "Design Systems", level: 92 },
-        { name: "Motion & Prototyping", level: 80 },
-    ],
-    skillSets: [
-        {
-            name: "Frontend Development", level: 95, iconList: [
-                { name: 'react', icn: FolderIcon },
-                { name: 'angular', icn: FolderIcon },
-                { name: 'vue', icn: FolderIcon },
-                { name: 'ui', icn: FolderIcon },
-            ]
-        },
-        {
-            name: "Backend Development", level: 95, iconList: [
-                { name: 'nodejs', icn: FolderIcon },
-                { name: 'expressjs', icn: FolderIcon },
-                { name: 'laravel', icn: FolderIcon },
-                { name: 'python', icn: FolderIcon },
-            ]
-        },
-        {
-            name: "Mobile Development", level: 95, iconList: [
-                { name: 'reactnative', icn: FolderIcon },
-                { name: 'android', icn: FolderIcon },
-            ]
-        },
-        {
-            name: "Database", level: 95, iconList: [
-                { name: 'sql', icn: FolderIcon },
-                { name: 'mongodb', icn: FolderIcon },
-            ]
-        },
-        {
-            name: "Tools & Practices", level: 95, iconList: [
-                { name: 'git', icn: FolderIcon },
-                { name: 'testdebugg', icn: FolderIcon },
-            ]
-        },
-    ],
-    // const skills = [
-    //   { name: "React JS", icon: <FaReact color="#61DBFB" /> },
-    //   { name: "Vue JS", icon: <FaVuejs color="#42b883" /> },
-    //   { name: "Angular 6+", icon: <FaAngular color="#DD0031" /> },
-    //   { name: "Node JS", icon: <FaNodeJs color="#3C873A" /> },
-    //   { name: "Express JS", icon: <SiExpress color="#000000" /> },
-    //   { name: "React Native", icon: <FaReact color="#61DBFB" /> }, // same logo as React
-    //   { name: "Git", icon: <FaGitAlt color="#F05032" /> },
-    //   { name: "SQL", icon: <SiMysql color="#4479A1" /> },
-    //   { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
-    //   { name: "Laravel", icon: <FaLaravel color="#FF2D20" /> },
-    //   { name: "Python", icon: <FaPython color="#3776AB" /> },
-    //   { name: "UI/UX Design", icon: <MdDesignServices color="#7C5CFF" /> }, // no brand logo — generic icon
-    //   { name: "Testing & Debugging", icon: <MdBugReport color="#7C5CFF" /> }, // no brand logo — generic icon
-    // ];
-    contact: { email: "jordan@example.com", github: "github.com/jordanavery", linkedin: "linkedin.com/in/jordanavery" },
+    stats: [["6+", "Years experience"], ["6", "Projects"], ["3", "Frameworks"]] as [string, string][],
+    experience,
+    projects,
+    education,
+    skillSets,
+    contact: {
+        email: "p.adhavan71@gmail.com",
+        phone: "+91 9786075662",
+        github: "https://github.com/Athav",
+        linkedin: "https://www.linkedin.com/in/athavan-p",
+    },
 };
 
-const NAV = [
+const NAV: NavItem[] = [
     { id: "about", label: "About" },
     { id: "work", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
+    { id: "education", label: "Education" },
     { id: "resume", label: "Resume" },
     { id: "contact", label: "Contact" },
 ];
