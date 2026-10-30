@@ -22,7 +22,7 @@ const cards: ContactCard[] = [
 
 export default function Contact() {
     return (
-        <Container id="contact" maxWidth="lg" sx={{ py: { xs: 5, md: 7 }, scrollMarginTop: "72px" }}>
+        <Container id="contact" maxWidth="lg" sx={{ pt: { xs: 5, md: 7 }, scrollMarginTop: "72px" }}>
             <Section id="resume" overline="Contact" title="Get in touch" maxTitleWidth={520}>
             <Reveal>
                 <Box sx={{ position: "relative", overflow: "hidden", textAlign: "center", mb: 5, py: { xs: 4, md: 6 }, px: 2, borderRadius: 2.5, border: "1px solid rgb(var(--a1r) / 0.25)", background: "linear-gradient(135deg, rgb(var(--a1r) / 0.12), rgb(var(--a2r) / 0.08))" }}>
