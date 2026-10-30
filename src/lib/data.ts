@@ -82,7 +82,7 @@ const CONTENT = {
         React.js, Angular (6+), and Vue.js. Experienced in delivering client projects across multiple domains with
         working knowledge of Node.js, MongoDB, and RESTful API integration. Strong in UI development,
         performance optimization, and agile methodologies.`,
-    stats: [["6+", "Years experience"], ["6", "Projects"], ["3", "Frameworks"]] as [string, string][],
+    stats: [["6+", "Years experience"], ["6+", "Projects"], ["3", "Frameworks"]] as [string, string][],
     experience,
     projects,
     education,
