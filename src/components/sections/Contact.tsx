@@ -8,6 +8,7 @@ import { CONTENT } from "../../lib/data";
 import Reveal from "../ui/Reveal";
 import SpotlightCard from "../ui/SpotlightCard";
 import GradientBlob from "../ui/GradientBlob";
+import Section from "../ui/Section";
 
 interface ContactCard { label: string; value: string; href: string; Icon: SvgIconComponent; cta: string; alt: boolean }
 
@@ -22,8 +23,9 @@ const cards: ContactCard[] = [
 export default function Contact() {
     return (
         <Container id="contact" maxWidth="lg" sx={{ py: { xs: 5, md: 7 }, scrollMarginTop: "72px" }}>
+            <Section id="resume" overline="Contact" title="Get in touch" maxTitleWidth={520}>
             <Reveal>
-                <Box sx={{ position: "relative", overflow: "hidden", textAlign: "center", mb: 5, py: { xs: 4, md: 6 }, px: 2, borderRadius: 6, border: "1px solid rgb(var(--a1r) / 0.25)", background: "linear-gradient(135deg, rgb(var(--a1r) / 0.12), rgb(var(--a2r) / 0.08))" }}>
+                <Box sx={{ position: "relative", overflow: "hidden", textAlign: "center", mb: 5, py: { xs: 4, md: 6 }, px: 2, borderRadius: 2.5, border: "1px solid rgb(var(--a1r) / 0.25)", background: "linear-gradient(135deg, rgb(var(--a1r) / 0.12), rgb(var(--a2r) / 0.08))" }}>
                     <GradientBlob top={-120} right={-100} color="var(--a1)" delay={2} />
                     <Box sx={{ position: "relative" }}>
                         <Typography variant="overline" sx={{ color: "primary.main", fontWeight: 700, letterSpacing: 1.5 }}>Contact</Typography>
@@ -33,6 +35,7 @@ export default function Contact() {
                     </Box>
                 </Box>
             </Reveal>
+            </Section>
 
             <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }, gap: 2.5 }}>
                 {cards.map(({ label, value, href, Icon, cta, alt }, i) => (
@@ -62,7 +65,7 @@ export default function Contact() {
             </Box>
 
             <Typography variant="body2" align="center" sx={{ color: "var(--mut)", mt: 6 }}>
-                © {new Date().getFullYear()} {CONTENT.name}. Built with care.
+                © {new Date().getFullYear()} {CONTENT.name}. Built with React.js, MUI and Tailwind CSS.
             </Typography>
         </Container>
     );

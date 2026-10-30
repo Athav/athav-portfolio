@@ -16,7 +16,7 @@ export default function Skills() {
                                     label={s.name}
                                     sx={{ mb: 2.5, bgcolor: "rgb(var(--a1r) / 0.12)", color: "var(--a1)", fontWeight: 600, fontSize: 15 }}
                                 />
-                                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2.5 }}>
+                                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2.5, 'justify-content': { xs: 'center', sm: 'start' } }}>
                                     {s.items.map(({ name, Icon, color }) => (
                                         <Box
                                             key={name}

@@ -16,7 +16,7 @@ export default function ResumePanel() {
                 <Box
                     sx={{
                         display: "grid", gridTemplateColumns: { xs: "1fr", md: "240px 1fr" }, gap: 5, alignItems: "center",
-                        p: { xs: 3, md: 5 }, borderRadius: 6, textAlign: { xs: "center", md: "left" },
+                        p: { xs: 3, md: 5 }, borderRadius: 2.5, textAlign: { xs: "center", md: "left" },
                         background: "linear-gradient(135deg, rgb(var(--a1r) / 0.1), rgb(var(--a2r) / 0.08))",
                         border: "1px solid rgb(var(--a1r) / 0.3)", boxShadow: "0 0 50px rgb(var(--a1r) / 0.12)",
                     }}

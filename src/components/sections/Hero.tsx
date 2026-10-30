@@ -54,13 +54,14 @@ export default function Hero() {
                     </Typography>
                 </Fade> */}
                 <Fade in timeout={1300}>
-                    <Box sx={{ display: "flex", gap: 1.5, justifyContent: "center", flexDirection: { xs: "column", sm: "row" }, alignItems: "center" }}>
+                    <Box sx={{ pb: 2, display: "flex", gap: 1.5, justifyContent: "center", flexDirection: { xs: "column", sm: "row" }, alignItems: "center" }}>
                         <Button
                             size="large"
                             variant="contained"
                             endIcon={<ArrowDownwardIcon />}
                             onClick={() => scrollToId("projects")}
                             sx={{
+                                width: { xs: '100%', sm: '20%' },
                                 bgcolor: "var(--a1)", color: "var(--on)", px: 3,
                                 boxShadow: "0 10px 25px -8px rgb(var(--a1r) / 0.55)",
                                 transition: "transform 0.2s ease",
@@ -74,6 +75,7 @@ export default function Hero() {
                             variant="outlined"
                             onClick={() => scrollToId("contact")}
                             sx={{
+                                width: { xs: '100%', sm: '15%' },
                                 borderColor: "var(--line)", color: "text.primary", transition: "transform 0.2s ease",
                                 "&:hover": { transform: "scale(1.04)", borderColor: "var(--a1)", color: "var(--a1)" },
                             }}
@@ -85,6 +87,7 @@ export default function Hero() {
                             variant="outlined"
                             onClick={() => scrollToId("resume")}
                             sx={{
+                                width: { xs: '100%', sm: '15%' },
                                 borderColor: "var(--line)", color: "text.primary", transition: "transform 0.2s ease",
                                 "&:hover": { transform: "scale(1.04)", borderColor: "var(--a1)", color: "var(--a1)" },
                             }}

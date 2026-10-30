@@ -12,7 +12,7 @@ interface SectionProps {
 
 export default function Section({ id, overline, title, children, maxTitleWidth }: SectionProps) {
     return (
-        <Container id={id} maxWidth="lg" sx={{ py: { xs: 5, md: 7 }, scrollMarginTop: "72px" }}>
+        <Container id={id} maxWidth="lg" sx={{ py: { xs: 5, md: 4 }, scrollMarginTop: "72px" }}>
             <Reveal>
                 <Typography variant="overline" sx={{ fontSize: 14, color: "primary.main", fontWeight: 700, letterSpacing: 1.5 }}>
                     {overline}
