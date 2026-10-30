@@ -32,6 +32,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Preview from "@mui/icons-material/RemoveRedEye";
 import Avatar from '@mui/material/Avatar';
+import FolderIcon from '@mui/icons-material/Folder';
 import Stack from '@mui/material/Stack';
 import { type SxProps, type Theme } from "@mui/material";
 
@@ -85,6 +86,57 @@ const CONTENT = {
         { name: "Design Systems", level: 92 },
         { name: "Motion & Prototyping", level: 80 },
     ],
+    skillSets: [
+        {
+            name: "Frontend Development", level: 95, iconList: [
+                { name: 'react', icn: <FolderIcon /> },
+                { name: 'angular', icn: <FolderIcon /> },
+                { name: 'vue', icn: <FolderIcon /> },
+                { name: 'ui', icn: <FolderIcon /> },
+            ]
+        },
+        {
+            name: "Backend Development", level: 95, iconList: [
+                { name: 'nodejs', icn: <FolderIcon /> },
+                { name: 'expressjs', icn: <FolderIcon /> },
+                { name: 'laravel', icn: <FolderIcon /> },
+                { name: 'python', icn: <FolderIcon /> },
+            ]
+        },
+        {
+            name: "Mobile Development", level: 95, iconList: [
+                { name: 'reactnative', icn: <FolderIcon /> },
+                { name: 'android', icn: <FolderIcon /> },
+            ]
+        },
+        {
+            name: "Database", level: 95, iconList: [
+                { name: 'sql', icn: <FolderIcon /> },
+                { name: 'mongodb', icn: <FolderIcon /> },
+            ]
+        },
+        {
+            name: "Tools & Practices", level: 95, iconList: [
+                { name: 'git', icn: <FolderIcon /> },
+                { name: 'testdebugg', icn: <FolderIcon /> },
+            ]
+        },
+    ],
+    // const skills = [
+    //   { name: "React JS", icon: <FaReact color="#61DBFB" /> },
+    //   { name: "Vue JS", icon: <FaVuejs color="#42b883" /> },
+    //   { name: "Angular 6+", icon: <FaAngular color="#DD0031" /> },
+    //   { name: "Node JS", icon: <FaNodeJs color="#3C873A" /> },
+    //   { name: "Express JS", icon: <SiExpress color="#000000" /> },
+    //   { name: "React Native", icon: <FaReact color="#61DBFB" /> }, // same logo as React
+    //   { name: "Git", icon: <FaGitAlt color="#F05032" /> },
+    //   { name: "SQL", icon: <SiMysql color="#4479A1" /> },
+    //   { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+    //   { name: "Laravel", icon: <FaLaravel color="#FF2D20" /> },
+    //   { name: "Python", icon: <FaPython color="#3776AB" /> },
+    //   { name: "UI/UX Design", icon: <MdDesignServices color="#7C5CFF" /> }, // no brand logo — generic icon
+    //   { name: "Testing & Debugging", icon: <MdBugReport color="#7C5CFF" /> }, // no brand logo — generic icon
+    // ];
     contact: { email: "jordan@example.com", github: "github.com/jordanavery", linkedin: "linkedin.com/in/jordanavery" },
 };
 
@@ -93,6 +145,7 @@ const NAV = [
     { id: "work", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
+    { id: "resume", label: "Resume" },
     { id: "contact", label: "Contact" },
 ];
 
@@ -503,7 +556,7 @@ export default function Portfolio() {
                 </Reveal>
                 <Grid container spacing={3}>
                     {CONTENT.projects.map((p, i) => (
-                        <Grid sx={{ width: { xs: '100%', md: '50%' } }} key={i}>
+                        <Grid sx={{ width: { xs: '100%', md: '48%', lg: '48%' } }} key={i}>
                             <Reveal delay={i * 100}>
                                 <Box
                                     component="a"
@@ -548,7 +601,7 @@ export default function Portfolio() {
                         What I bring
                     </Typography>
                 </Reveal>
-                <Box sx={{ maxWidth: 520, display: "flex", flexDirection: "column", gap: 4 }}>
+                {/* <Box sx={{ maxWidth: 520, display: "flex", flexDirection: "column", gap: 4 }}>
                     {CONTENT.skills.map((skill, i) => (
                         <Reveal key={skill.name} delay={i * 100}>
                             <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
@@ -574,7 +627,41 @@ export default function Portfolio() {
                             />
                         </Reveal>
                     ))}
-                </Box>
+                </Box> */}
+                <Grid container spacing={3}>
+                    {CONTENT.skillSets.map((s, i) => (
+                        <Grid sx={{ width: { xs: '100%', md: '48%', lg: '48%' } }} key={i}>
+                            <Reveal delay={i * 100}>
+                                <Box
+                                    component="a"
+                                    sx={{ display: "block", textDecoration: "none", color: "inherit" }}
+                                >
+                                    <SpotlightCard>
+                                        <CardContent sx={{ p: 3 }}>
+                                            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
+                                                <Chip
+                                                    label={s.name}
+                                                    size="medium"
+                                                    sx={{ bgcolor: "rgba(124,92,255,0.08)", color: "primary.main", fontWeight: 600, fontSize: 15 }}
+                                                />
+                                            </Box>
+                                            <Stack direction="row" spacing={2}>
+                                                {s.iconList.map((icn, i) => (
+                                                    <Avatar key={i} sx={{ width: 55, height: 55 }}>
+                                                        {icn.icn}
+                                                    </Avatar>
+                                                ))}
+                                            </Stack>
+                                            {/* <Typography variant="h6" sx={{ mb: 1 }}>
+                                                {p.title}
+                                            </Typography> */}
+                                        </CardContent>
+                                    </SpotlightCard>
+                                </Box>
+                            </Reveal>
+                        </Grid>
+                    ))}
+                </Grid>
             </Container>
 
             {/* Resume */}
@@ -616,7 +703,7 @@ export default function Portfolio() {
                             <Button
                                 size="large"
                                 variant="outlined"
-                                 href={resumePDF}
+                                href={resumePDF}
                                 target="_blank"
                                 startIcon={<Preview />}
                                 sx={{
