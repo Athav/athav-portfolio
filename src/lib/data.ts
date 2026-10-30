@@ -1,6 +1,6 @@
 import {
-    SiAngular, SiBitbucket, SiCss, SiExpress, SiFigma, SiGit, SiHtml5, SiJavascript, SiJsonwebtokens, SiLaravel,
-    SiMongodb, SiMysql, SiNodedotjs, SiNpm, SiReact, SiSass, SiTypescript, SiVuedotjs, SiWordpress,
+    SiAngular, SiBitbucket, SiCss, SiExpress, SiFigma, SiGit, SiHtml5,
+    SiMongodb, SiNodedotjs, SiNpm, SiReact, SiSass, SiVuedotjs,
 } from "react-icons/si";
 import type { EducationItem, ExperienceItem, NavItem, ProjectItem, SkillSet } from "./interfaces";
 
